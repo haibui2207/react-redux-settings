@@ -1,11 +1,8 @@
 import { createBrowserHistory } from 'history';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
-import {
-  createStore, applyMiddleware, compose, combineReducers,
-} from 'redux';
-
-import { ROUTES } from '../constants';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { ROUTES } from '@/constants';
 
 import rootSagas from './sagas';
 import rootDucks from './ducks';

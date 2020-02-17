@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-
-import { signUp } from '../../../redux/ducks/auth.duck';
+import { signUp } from '@/redux/ducks/auth.duck';
 
 import styles from './signUp.styles';
 

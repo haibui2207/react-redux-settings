@@ -9,6 +9,7 @@ const paths = {
 };
 
 export { paths };
+
 /**
  * Using generate app routes
  */

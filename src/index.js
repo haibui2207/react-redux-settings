@@ -5,9 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, ReactReduxContext } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
+import { configureStore } from '@/redux';
 
 import App from './App';
-import { configureStore } from './redux';
+import NotificationProvider from './NotificationProvider';
 import * as serviceWorker from './serviceWorker';
 
 const { store, history, runSagaMiddleware } = configureStore;
@@ -21,7 +22,9 @@ const { store, history, runSagaMiddleware } = configureStore;
 ReactDOM.render(
   <Provider store={store} context={ReactReduxContext}>
     <ConnectedRouter history={history} context={ReactReduxContext}>
-      <App />
+      <NotificationProvider>
+        <App />
+      </NotificationProvider>
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root'),

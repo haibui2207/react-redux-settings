@@ -25,6 +25,14 @@ Setting up basic project with bootstrap and redux saga
 
 > 6. [react-jss](https://github.com/cssinjs/jss)
 
+# # Fake API
+> https://reqres.in/
+
+# # JsConfig.js fix module not resolved
+> 1. https://stackoverflow.com/questions/38044010/make-vs-code-read-webpack-config-and-recognize-path-with-alias
+
+> 2. https://www.npmjs.com/package/eslint-import-resolver-alias
+
 # # How to run?
 
 > 1. Clone repositiory

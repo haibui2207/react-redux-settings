@@ -1,8 +1,7 @@
 import React from 'react';
 import { Switch } from 'react-router';
-
-import { ROUTES } from './constants';
-import { generateRoutes } from './utils';
+import ROUTES from '@/constants/routes';
+import generateRoutes from '@/utils/generateRoutes';
 
 const App = () => <Switch>{generateRoutes(ROUTES)}</Switch>;
 

@@ -49,6 +49,18 @@
     "airbnb",
     "eslint:recommended"
   ],
+  /**
+   * Allows you custom absolute import
+   * https://medium.com/hackernoon/absolute-imports-with-create-react-app-4c6cfb66c35d
+   */
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".ts", ".js", ".jsx", ".json"]
+      }
+    }
+  },
   "rules": {
     /**
      * 0: off
@@ -74,6 +86,7 @@
     "no-new-wrappers": 2,
     "no-restricted-globals": 2,
     "no-underscore-dangle": 2,
+    "no-shadow": 0,
     "nonblock-statement-body-position": 2,
     "new-cap": 2,
     "arrow-spacing": 2,
@@ -93,6 +106,7 @@
     "space-infix-ops": 2,
     "object-curly-spacing": 2,
     "object-shorthand": 2,
+    "object-curly-newline": 0,
     "padded-blocks": 2,
     "prefer-arrow-callback": 2,
     "prefer-destructuring": 2,
