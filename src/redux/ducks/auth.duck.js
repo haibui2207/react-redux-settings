@@ -19,30 +19,18 @@ const {
 } = generateActions(PREFIX);
 
 /**
- * Duck's actions
- */
-const signIn = createAction(`${PREFIX}/SIGN_IN`);
-const signUp = createAction(`${PREFIX}/SIGN_UP`);
-const signOut = createAction(`${PREFIX}/SIGN_OUT`);
-
-const getFetching = (state) => state.auth.fetching;
-const getSuccess = (state) => state.auth.success;
-const getError = (state) => state.auth.error;
-
-/**
  * Actions - using for calling, getting, setting from component
  */
-export {
-  setFetching,
-  requestFailed,
-  requestSuccess,
-  signIn,
-  signUp,
-  signOut,
-  getFetching,
-  getSuccess,
-  getError,
-};
+export { setFetching, requestFailed, requestSuccess };
+export const signIn = createAction(`${PREFIX}/SIGN_IN`);
+export const signUp = createAction(`${PREFIX}/SIGN_UP`);
+export const signOut = createAction(`${PREFIX}/SIGN_OUT`);
+
+export const getFetching = (state) => state.auth.fetching;
+export const getSuccess = (state) => state.auth.success;
+export const getError = (state) => state.auth.error;
+export const getToken = (state) => state.auth.token;
+export const getUser = (state) => state.auth.user;
 
 /**
  * Reducers - using for redux store

@@ -1,50 +1,50 @@
 import Home from '@/containers/Home';
-import SignIn from '@/containers/auth/SignIn/SignIn';
-import SignUp from '@/containers/auth/SignUp';
+import SignIn from '@/containers/SignIn/SignIn';
+import SignUp from '@/containers/SignUp';
 import NotFound from '@/containers/NotFound';
 
-const paths = {
-  root: '/',
-  signIn: '/sign-in',
-  signUp: '/sign-up',
-  notFound: '/not-found',
+const PATHS = {
+  ROOT: '/',
+  SIGN_IN: '/sign-in',
+  SIGN_UP: '/sign-up',
+  NOT_FOUND: '/not-found',
 };
 
-export { paths };
+export { PATHS };
 
 /**
  * Using generate app routes
  */
 export default [
   {
-    path: paths.root,
+    path: PATHS.ROOT,
     title: 'Welcome to my app',
     component: Home,
     exact: true,
   },
   {
-    path: paths.signIn,
+    path: PATHS.SIGN_IN,
     title: 'Sign in to my app',
     component: SignIn,
     exact: true,
   },
   {
-    path: paths.signUp,
+    path: PATHS.SIGN_UP,
     title: 'Sign up',
     component: SignUp,
     exact: true,
   },
   {
-    path: paths.notFound,
+    path: PATHS.NOT_FOUND,
     title: 'Page not found',
     component: NotFound,
     exact: true,
   },
   {
-    path: `${paths.root}**`,
+    path: `${PATHS.root}**`,
     title: 'Redirect to root',
     redirect: true,
-    to: paths.notFound,
+    to: PATHS.NOT_FOUND,
     exact: true,
   },
 ];

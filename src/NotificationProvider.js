@@ -15,10 +15,10 @@ const Notification = ({ children, ...rest }) => {
   const notification = useSelector(getNotification, shallowEqual);
 
   useEffect(() => {
-    const { id, type: appearance, message, ...rest } = notification;
+    const { id, type: appearance, message } = notification;
     if (!id) return;
 
-    addToast(message, { appearance, ...rest });
+    addToast(message, { appearance });
   }, [notification]);
 
   return React.cloneElement(children, { ...rest });

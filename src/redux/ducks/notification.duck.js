@@ -7,16 +7,11 @@ const initialStates = { type: undefined, message: undefined };
 const PREFIX = 'NOTIFICATION';
 
 /**
- * Duck's actions
- */
-const emitNotification = createAction(`${PREFIX}/EMIT`);
-
-const getNotification = (state) => state.notification;
-
-/**
  * Actions - using for calling, getting, setting from component
  */
-export { emitNotification, getNotification };
+export const emitNotification = createAction(`${PREFIX}/EMIT`);
+
+export const getNotification = (state) => state.notification;
 
 /**
  * Reducers - using for redux store

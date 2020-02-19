@@ -16,7 +16,6 @@ function* handleRequestSuccessFlow() {
       if (payload.dismiss) return;
 
       const data = {
-        ...payload,
         id: payload.id || generateId(),
         type: NOTIFICATION_TYPES.SUCCESS,
         message: payload.message || NOTIFICATION.MESSAGE_SUCCESS,
@@ -32,7 +31,6 @@ function* handleRequestFailedFlow() {
       if (payload.dismiss) return;
 
       const data = {
-        ...payload,
         id: payload.id || generateId(),
         type: NOTIFICATION_TYPES.ERROR,
         message: payload.message || NOTIFICATION.MESSAGE_ERROR,
