@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router';
+import { withTitle } from '@/HOCs';
 
 /**
  * @param routes is an object extends from RouteProps and RedirectProps
@@ -12,12 +13,18 @@ const generateRoutes = (routes) => {
     return null;
   }
 
-  return routes.map(({ title, isRedirect, ...rest }) => {
-    if (isRedirect) {
-      return <Redirect key={title} {...rest} />;
+  return routes.map(({ redirect, component, ...rest }) => {
+    if (redirect) {
+      return <Redirect key={rest.title} {...rest} />;
     }
 
-    return <Route key={title} {...rest} />;
+    return (
+      <Route
+        key={rest.title}
+        component={withTitle(component, { title: rest.title })}
+        {...rest}
+      />
+    );
   });
 };
 

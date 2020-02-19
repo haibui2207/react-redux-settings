@@ -1,11 +1,13 @@
-import Home from '../containers/Home';
-import SignIn from '../containers/auth/SignIn/SignIn';
-import SignUp from '../containers/auth/SignUp';
+import Home from '@/containers/Home';
+import SignIn from '@/containers/auth/SignIn/SignIn';
+import SignUp from '@/containers/auth/SignUp';
+import NotFound from '@/containers/NotFound';
 
 const paths = {
   root: '/',
   signIn: '/sign-in',
   signUp: '/sign-up',
+  notFound: '/not-found',
 };
 
 export { paths };
@@ -33,10 +35,16 @@ export default [
     exact: true,
   },
   {
-    path: `${paths.root}/**`,
+    path: paths.notFound,
+    title: 'Page not found',
+    component: NotFound,
+    exact: true,
+  },
+  {
+    path: `${paths.root}**`,
     title: 'Redirect to root',
     redirect: true,
-    to: paths.root,
+    to: paths.notFound,
     exact: true,
   },
 ];
